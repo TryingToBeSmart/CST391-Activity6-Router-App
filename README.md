@@ -1,3 +1,25 @@
+# Activity 6 Router App
+This activity shows us how to handle protected routes where only authorized users can visit.  The isLoggedIn in state is initially set to false.  While it is false, the PrivateRoute component redirects the user to the LoginPage.  The LoginPage component declares a handleLogin function that sets the 'from' URL address location that a user was attempting to access before being redirected then calls the onClick that was passed from the App.js in the props.  props.onClick(from, navigate) calls that App.js event and passes the location along with the navigate function that was substantiated from userNavigate().  Then, handleLogin in App.js fires and sets isLoggedIn to true and reroutes the user to the URL they were trying to access before seeing the LoginPage.  This is accomplished with: navigate(from, {replace: true}).  Navigate is the routing function to send the user somewhere and the coordinates are the 'from' location that was just sent over from the LoginPage.  The replace: true gets rid of the LoginPage redirect URL so that the user doesn't go back to it if the select the browser's back button.
+
+Main page
+![Main](screenshots/main.png)
+
+User being displayed by using the useParams function
+![User](screenshots/user.png)
+
+Unauthorized About page
+![Unauthorized About page](screenshots/unauthorized_about.png)
+
+Unauthorized Contact page
+![Unauthorized Contact page](screenshots/unauthorized_contact.png)
+
+Authorized About page
+![Authorized About page](screenshots/authorized_about.png)
+
+Authorized Contact page
+![Authorized Contact page](screenshots/authorized_contact.png)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
